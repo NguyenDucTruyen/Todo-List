@@ -1,0 +1,258 @@
+*{
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --green: #4acc47;
+    --red:  #eb5432;
+    --textcolor: #9CA3AF;
+}
+body{
+    background-color: #1E293B;
+    color: var(--textcolor);
+    transition: all ease 0.3s;
+}
+#main{
+    margin: 100px auto;
+    width: 480px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.header__label{
+    display: flex;
+    align-items: center;  
+}
+h1{
+    font-size: 24px;
+}
+.header__label i{
+    font-size: 24px;
+    width: 40px;
+    user-select: none;
+}
+.header__navigation{
+    display: flex;
+    list-style-type: none 
+}
+.nav__list{
+    padding: 12px 16px;
+    font-size: 24px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.AddTask{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.AddTask input{
+    box-sizing: border-box;
+    width: 70%;
+    padding: 12px;
+    border: none;
+    border-bottom: 2px solid #0F172A;
+    outline: none;
+    background: transparent ;
+    font-size: 16px;
+    color: var(--textcolor);
+}
+.AddTask input::placeholder{
+    font-size: 16px;
+    color:var(--textcolor);
+    
+}
+.btn{
+    width: 25%;
+    background-color: #0F172A;
+    border: none;
+    padding: 16px 30px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    color:var(--textcolor);
+    cursor: pointer;
+}
+.btn-edit{
+    display: none;
+}
+.container{
+    width: 100%;
+    margin-top: 40px;
+}
+.container__area{
+    list-style-type: none;
+}
+.listTask{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 12px auto;
+    padding-right: 8px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #0F172A;
+    border-left: 6px solid var(--red);
+    cursor: pointer;
+    animation: appear ease 0.2s;
+}
+@keyframes appear{
+    from{
+        transform:  scale(0.4);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.listTask .content{
+    display: block;
+    height: 18px;
+    width: 80%;
+    padding: 20px 8px;
+}
+.adjustTask i{
+    font-size: 18px;
+    padding: 6px;
+    width: 20px;
+}
+.adjustTask .remove{
+    color: var(--red);
+}
+.adjustTask .edit{
+    color: var(--green);
+}
+
+
+.checked{
+    background-color: #0F172A;
+}
+.listDone{
+    border-left-color: var(--green);
+}
+.listDone .content{
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
+.radio{
+    display: none;
+}
+.radio1:checked ~ .container__area .listTask{
+    display: flex;
+}
+.radio2:checked ~ .container__area .listTask{
+    display: none;
+}
+.radio2:checked ~ .container__area .listDone{
+    display: flex;
+}
+.radio3:checked ~ .container__area .listDone{
+    display: none;
+}
+/* Toast css */
+
+.hide{
+    /* display: none !important; */
+}
+#toast{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 90vh;
+}
+.toast{
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+    width: 340px;
+    margin-right: 30px;
+    transition: all linear 2s;
+    position: relative;
+}
+@keyframes fadeInLeft {
+    0%{
+        transform: translateX(calc(100% + 30px));
+    }
+    80%{
+        transform: translateX(-30px);
+        
+    }
+    90%{
+        transform: translateX(20px);
+        
+    }
+    100%{
+        transform: translateX(0);
+        
+    }
+}
+@keyframes fadeOut{
+    0%{
+        transform: translateX(0);
+        
+    }
+    80%{
+        transform: translateX(-20px);
+        
+    }
+    100%{
+        transform: translateX(calc(100% + 30px));
+        
+    }
+}
+.toast{
+    margin-top: 16px;
+    color: #fff;
+}
+.toast--Success{
+    background-color: var(--green);
+}
+.toast--Error{
+    background-color: var(--red);
+}
+
+.toast__icon, .toast__close{
+    padding:0 16px;
+}
+.toast__icon{
+    font-size: 24px;
+}
+.toast__close{
+    font-size: 20px;
+    font-weight: 700;
+    color: #ccc;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+.toast__close:hover{
+    color: #fff;
+}
+.toast__title{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.toast__msg{
+    font-size: 14px;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+#toast{
+    position: fixed;
+    right: 0;
+    top: 60px;
+    z-index: 99999;
+}
+
+

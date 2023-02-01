@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <div id="main">
+        <div class="header">
+            <div class="header__label">
+                <i class="fa-solid fa-list"></i>
+                <h1 class="heading">To Do List</h1>
+            </div>
+
+            <ul class="header__navigation">
+                <li class="nav__list  checked">All</li>
+                <li class="nav__list  ">Done</li>
+                <li class="nav__list  ">Undone</li>
+            </ul>
+        </div>
+
+        <div class="AddTask">
+            <input type="text" name="" id="inputField" placeholder="Add a new task">
+            <button class="btn btn-add">ADD</button>
+            <button class="btn btn-edit">EDIT</button>
+            <!-- <button class="btn">ADD</button> -->
+        </div>
+
+        <div class="container">
+            <input type="radio" class="radio radio1" name="nav" value="" checked>
+            <input type="radio" class="radio radio2" name="nav" value="">
+            <input type="radio" class="radio radio3" name="nav" value="">
+            <div class="container__area">
+                
+                <div class="listTask" >
+                    <p class="content">Mau</p>
+                    <div class="adjustTask">
+                        <i class="fa-solid fa-trash remove"></i>
+                        <i class="fa-solid fa-pen-to-square edit"></i>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div id="toast"></div>
+    <!-- <div >
+        <div onclick="showSuccessToast();" class="btn btn--success">Show success toast</div>
+        <div onclick="showErrorToast();" class="btn btn--error">Show error toast</div>
+    </div> -->
+    <script src="./assets/script.js" ></script>
+</body>
+</html>
